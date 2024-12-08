@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full flex gap-3 mt-[20px]">
+    <div className="w-full flex gap-3 mt-[20px] mb-[60px]">
       <div className=" sm:hidden md:block lg:block sm:w-1/2 md:w-1/4 lg:w-1/4">
         <Filter />
       </div>
@@ -56,8 +56,8 @@ const Home = () => {
       <Drawer/>
       </div>
       {isLoading && <Spinner/>}
+      {!isLoading && data.length== 0 && <NoData className="m-auto"/>}
       <div className="w-full lg:grid lg:grid-cols-3 gap-y-3 gap-4 sm:m-auto md:m-auto lg:m-auto md:grid md:grid-cols-2 sm:grid-cols-1 items-center">
-        {!isLoading && data.length== 0 && <NoData/>}
         {!isLoading && data &&
           data.length > 0 &&
           data.map((item) => (
@@ -81,7 +81,7 @@ const Home = () => {
                     {item.brand}
                   </div>
                 </div>
-                <div className="flex justify-between items-center p-2 text-left gap-3 mt-1">
+                <div className="flex items-center p-2 text-left gap-3 mt-1">
                   <p className="font-semibold lg:text-sm md:text-xs sm:text-xs">
                     {item.category}
                   </p>
@@ -90,8 +90,8 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="flex flex-start items-center justify-around gap-3 mt-2 w-full text-left">
-                    <p className="font-semibold text-gray-500 lg:text-sm md:text-xs sm:text-xs">
-                      &#8377; {item.price}
+                    <p className="font-semibold text-gray-500 lg:text-sm md:text-xs sm:text-xs text-left">
+                         &nbsp; &#8377; {item.price}
                     </p>
                   <div className="m-auto sm:w-1/2 md:w-1/2 lg:w-1/2 sm:gap-1 md:gap-1 lg:gap:1 flex items-center font-semibold lg:text-sm md:text-xs sm:text-xs md:p-1">
                     <p>{item.rating}</p>

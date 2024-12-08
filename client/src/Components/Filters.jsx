@@ -51,7 +51,7 @@ const Filers = () => {
   };
 
   return (
-    <div className="w-full h-full font-semibold lg:text-base md:text-sm sm:text-xs pl-10">
+    <div className="w-full h-full font-semibold lg:text-base md:text-sm sm:text-xs pl-10 mt-[12px]">
       <div className="w-full mb-4">
         <div className="font-bold mb-2 text-left">Filter By Brand</div>
         <div>
